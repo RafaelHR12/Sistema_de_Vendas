@@ -44,13 +44,13 @@ public class Pessoa {
 			}
 			
 			public String getCPF() {
-				return this.CPF;
+				return this.CPF.substring(0,3) + "." + this.CPF.substring(3, 6) + "." + this.CPF.substring(6, 9) + "-" + this.CPF.substring(9, 11);
 			}
 			
 			// RG
 			
 				public boolean setRG( String RG ) {
-					if ( RG.length() == 7 && RG.matches(".*[0-9].*")) {
+					if ( (RG.length() == 7 || RG.length() == 9) && RG.matches(".*[0-9].*")) {
 						this.RG = RG;
 						return true;
 					}
@@ -58,6 +58,12 @@ public class Pessoa {
 				}
 				
 				public String getRG() {
+					if ( RG.length() == 7) {
+						return this.RG.substring(0, 1) + "." + this.RG.substring(1, 4) + "." + this.RG.substring(4, 7);
+					}
+					if ( RG.length() == 9) {
+						return this.RG.substring(0, 2) + "." + this.RG.substring(2, 5) + "." + this.RG.substring(5, 8) + "-" + this.RG.substring(8);
+					}
 					return this.RG;
 				}
 }

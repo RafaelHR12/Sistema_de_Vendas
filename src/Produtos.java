@@ -1,7 +1,7 @@
 
 public class Produtos {
 
-	private String descricao;
+	private String nome;
 	private double preco;
 	
 	// Preço
@@ -19,15 +19,15 @@ public class Produtos {
 	
 	// Descrição
 	
-	public boolean setDescricao( String descricao ) {
-		if ( descricao.length() >= 5 ) {
-			this.descricao = descricao;
+	public boolean setNome( String nome ) {
+		if ( nome.length() >= 5 ) {
+			this.nome = nome;
 			return true;
 		}
 		return false;
 	}
 	
-	public String getDescricao() {
-		return this.descricao;
+	public String getNome() {
+		return this.nome;
 	}
 }

@@ -13,17 +13,24 @@ public class Pedido {
 	//Lista de produtos
 	private ArrayList<Produtos> produtos;
 	
+	public Pedido() {
+        this.produtos = new ArrayList<>();
+    }
+	
 	public void addProduto (Produtos produto) {
-		this.produtos.add(produto);
+		produtos.add(produto);
 	}
 	
 	public void removeProduto(int indice) {
 		this.produtos.remove(indice);
 	}
 	
-	public Produtos getProduto(int indice) {
-		return this.produtos.get(indice);
-	}
+	public void imprimirProdutos() {
+        System.out.println("Produtos no pedido:");
+        for (Produtos produto : produtos) {
+            System.out.println("Nome: " + produto.getNome() + ", Preço: " + produto.getPreco());
+        }
+    }
 	
 	// qtddItens
 	
@@ -55,25 +62,15 @@ public class Pedido {
 	
 	// data
 	
-	public boolean setData( Date data ) {
+	public Date setData( Date data ) {
 			if ( data != null ) {
 				this.data = data;
-				return true;
 			}
-			return false;
+			return this.data = data;
 		}
 		
 	public Date getData() {
 			return this.data;
 		}
 		
-	public double getValortotal() {
-		double valorTotal = 0;
-		
-		for(int a=0; a<produtos.size(); a++) {
-			valorTotal += getProduto(a).getPreco();
-		}
-		
-		return valorTotal;
-	}
 }
