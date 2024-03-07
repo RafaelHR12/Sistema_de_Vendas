@@ -84,12 +84,15 @@ public class Principal {
 		System.out.println("Número casa: "+end.getNumero());
 		
 		
-		// Ainda precisa adicionar dados a Pessoa João
-		Pessoa joao = new Pessoa();
-		joao.setEndereco(end);
+		pes.setEndereco(end);
 		
         // .getRua() é um dado Específico dentro de endereço
-		System.out.println("Endereço do João: "+joao.getEndereco().getRua());
+		System.out.println("Endereço do João: "+pes.getEndereco().getRua());
+		
+		//Adicionar produtos
+		ped.addProduto(prod);
+		
+		
 	}
 
 }

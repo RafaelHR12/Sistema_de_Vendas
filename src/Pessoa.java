@@ -27,7 +27,10 @@ public class Pessoa {
 		}
 		
 		public String getNome() {
-			return this.nome;
+			if (this.nome == null)
+				return "Nome Inválido";
+			else 
+				return this.nome;
 		}
 		
 		// CPF
